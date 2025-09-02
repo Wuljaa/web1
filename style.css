@@ -1,0 +1,199 @@
+    h1 {
+        color: #000000;
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    body,
+    head {
+        margin: 0;
+        padding: 0;
+        position: relative;
+        min-height: 100vh;
+        overflow: hidden;
+        background-image: url('burger-festival-4.jpg');
+        background-image: url('Zeppelin+3.jpeg');
+    }
+    
+    h1 {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-family: 'Dancing Script', cursive;
+        width: 100%;
+        font-size: 100px;
+    }
+    
+    .dod_mjesto {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-family: 'Dancing Script', cursive;
+        width: 100%;
+        font-size: 70px;
+    }
+    
+    p {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-family: 'Dancing Script', cursive;
+        width: 100%;
+        font-size: 30px;
+    }
+    
+    .rec {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 95%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-family: 'Dancing Script', cursive;
+        width: 100%;
+        font-size: 30px;
+        color: #000000;
+    }
+    
+    body::before,
+    body::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+        will-change: opacity;
+    }
+    
+    #restorani {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 700px;
+        height: 800px;
+        background: rgba(255, 246, 227, 0.95);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        border: 2px groove rgba(100, 57, 7, 0.8);
+    }
+    
+    body::before {
+        background-image: url('burger-festival-4.jpg');
+        animation: fadeBg1 14s infinite;
+    }
+    
+    body::after {
+        background-image: url('Zeppelin+3.jpeg');
+        animation: fadeBg2 14s infinite;
+    }
+    
+    .container {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 600px;
+        height: 350px;
+        background: rgba(255, 246, 227, 0.95);
+        border-radius: 20px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        border: 2px groove rgba(100, 57, 7, 0.8);
+    }
+    
+    h2 {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-family: 'Dancing Script', cursive;
+        width: 100%;
+        font-size: 100px;
+        color: #000000;
+    }
+    
+    #recenzije {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1000px;
+        height: 700px;
+        background: rgba(255, 246, 227, 0.95);
+        border-radius: 20px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        border: 2px groove rgba(100, 57, 7, 0.8);
+    }
+    
+    @keyframes fadeBg1 {
+        0% {
+            opacity: 1;
+        }
+        35.7% {
+            opacity: 1;
+        }
+        42.8% {
+            opacity: 0;
+        }
+        92.8% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes fadeBg2 {
+        0% {
+            opacity: 0;
+        }
+        35.7% {
+            opacity: 0;
+        }
+        42.8% {
+            opacity: 1;
+        }
+        92.8% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
