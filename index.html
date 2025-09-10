@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gastro vodič Bjelovara</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <!-- nav -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link active" href="#" onclick="showSection('pocetna')">Početna</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('restorani')">Restorani</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('recenzije')">Recenzije</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('dodaj')">Dodaj mjesto</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('dodaj-rec')">Dodaj recenziju</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('burger')">Hrana</a></li>
+        </ul>
+    </nav>
+
+    <!-- selekcije -->
+    <main class="container">
+        <div id="pocetna" class="section">
+            <h1>Gastro vodić<br>BJELOVARA</h1>
+            <p>Dobrodošli!</p>
+        </div>
+        <div id="restorani" class="section" style="display:none;">
+            <table class="table table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Naziv</th>
+                        <th>Tip</th>
+                        <th>Lokacija</th>
+                        <th>Ocjena</th>
+                        <th>Akcije</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-mjesta">
+                    <!-- js redovi -->
+                </tbody>
+            </table>
+        </div>
+        <div id="recenzije" class="section" style="display:none;">
+            <h2>Recenzije</h2>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Ime</th>
+                        <th>Recenzija</th>
+                        <th>Ocjena</th>
+                        <th>Datum</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-recenzije">
+                    <!-- js redovi -->
+                </tbody>
+            </table>
+        </div>
+        <div id="dodaj" class="section" style="display:none;">
+            <div class="mb-3">
+                <h2 class="dod_mjesto">Dodaj mjesto</h2>
+            </div>
+            <form id="forma-dodaj">
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="naziv" placeholder="Naziv" required>
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="tip" placeholder="Tip" required>
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="lokacija" placeholder="Lokacija" required>
+                </div>
+                <div class="mb-3">
+                    <select type="number" class="form-select" id="ocjena" placeholder="Ocjena (1-5)" min="1" max="5" required>
+                        <option value="" disabled selected>Ocjena (1-5)</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-primary" type="submit">Dodaj</button>
+                </div>
+            </form>
+        </div>
+        <div id="dodaj-rec" class="section" style="display:none;">
+            <div class="mb-3">
+                <h2 class="dod_mjesto">Dodaj recenziju</h2>
+            </div>
+            <form id="forma-dodaj-rec">
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="rec-ime" placeholder="Ime" required>
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="recenzija" placeholder="Recenzija" required>
+                </div>
+                <div class="mb-3">
+                    <input type="text" id="datepicker" placeholder="Odabrite datum" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <select type="number" class="form-select" id="rec-ocjena" placeholder="Ocjena (1-5)" min="1" max="5" required>
+                        <option value="" disabled selected>Ocjena (1-5)</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-primary" type="submit">Dodaj</button>
+                </div>
+            </form>
+        </div>
+        <div id="burger" class="section" style="display:none;">
+            <h2>Hrana kakvu mozete ocekivati</h2>
+            <img id="slika-hrane" src="" alt="Hrana">
+        </div>
+    </main>
+
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('.section').forEach(sec => sec.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+            document.querySelector(`a[onclick="showSection('${id}')"]`).classList.add('active');
+        }
+
+        const picker = new Pikaday({
+            field: document.getElementById('datepicker'),
+            format: 'DD-MM-YYYY',
+            onSelect: function() {
+                console.log('Selected date:', this.getMoment().format('DD-MM-YYYY'));
+            }
+        });
+    </script>
+</body>
+
+</html>

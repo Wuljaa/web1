@@ -1,0 +1,230 @@
+h1 {
+    color: #000000;
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    width: 100%;
+    font-size: 100px;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 100px;
+    color: #000000;
+}
+
+body,
+head {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    background-image: url('burger-festival-4.jpg');
+    background-image: url('Zeppelin+3.jpeg');
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    width: 100%;
+    font-size: 30px;
+}
+
+.dod_mjesto {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 70px;
+    margin-top: 10px;
+}
+
+.rec {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    width: 100%;
+    font-size: 30px;
+    color: #000000;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    height: 350px;
+    margin-top: 15vh;
+    background: rgba(255, 246, 227, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+    border: 2px groove rgba(100, 57, 7, 0.8);
+    z-index: 0;
+}
+
+#restorani {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    height: 70vh;
+    background: rgba(255, 246, 227, 0.95);
+    border: 2px groove rgba(100, 57, 7, 0.8);
+}
+
+#recenzije {
+    background: rgba(255, 246, 227, 0.95);
+    border: 2px groove rgba(100, 57, 7, 0.8);
+    #restorani table {
+        font-size: 14px;
+        /* manji font na mobitelu */
+    }
+    #restorani th,
+    #restorani td {
+        padding: 0.25rem;
+        /* smanji padding ćelija */
+    }
+}
+
+#slika-hrane {
+    margin: 0 auto;
+    width: 70vw;
+    height: 50vh;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    will-change: opacity;
+}
+
+body::before {
+    background-image: url('burger-festival-4.jpg');
+    animation: fadeBg1 14s infinite;
+}
+
+body::after {
+    background-image: url('Zeppelin+3.jpeg');
+    animation: fadeBg2 14s infinite;
+}
+
+@keyframes fadeBg1 {
+    0% {
+        opacity: 1;
+    }
+    35.7% {
+        opacity: 1;
+    }
+    42.8% {
+        opacity: 0;
+    }
+    92.8% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeBg2 {
+    0% {
+        opacity: 0;
+    }
+    35.7% {
+        opacity: 0;
+    }
+    42.8% {
+        opacity: 1;
+    }
+    92.8% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 1080px) {
+    .container {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+        box-sizing: border-box;
+        margin-top: 10vh;
+    }
+    h1 {
+        font-size: 50px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    .dod_mjesto {
+        font-size: 40px;
+        margin-top: 5px;
+    }
+    p,
+    .rec {
+        font-size: 20px;
+        top: 85%;
+    }
+    #restorani {
+        width: 95vw;
+        top: 62%;
+        height: 60vh;
+    }
+    #slika-hrane {
+        width: 90vw;
+        height: auto;
+    }
+    .dod-mjesto {
+        font-size: 20px;
+        margin-top: 5px;
+    }
+    .section {
+        padding: 10px;
+    }
+    #restorani table {
+        font-size: 14px;
+    }
+    #restorani th,
+    #restorani td {
+        padding: 0.25rem;
+    }
+    #recenzije table {
+        font-size: 14px;
+    }
+    #recenzije th,
+    #recenzije td {
+        padding: 0.25rem;
+    }
+    #burger {
+        padding: 0.25rem;
+        margin-top: -10px;
+    }
+    p {
+        top: 56%;
+    }
+}
